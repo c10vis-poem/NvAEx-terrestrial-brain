@@ -24,7 +24,7 @@ Test thought `LUNAR-42-DELTA` is in DB (id `8c79f79f`) and in vault
 | DB schema | Correct | Direct insert returned UUID; thoughts table has content, embedding, metadata, reference_id, note_snapshot_id columns |
 | DB permissions | Granted | `GRANT ALL ON thoughts TO brain_app` executed |
 | OpenRouter API | Works from VM | Test script got 200 + embedding vector from `openai/text-embedding-3-small` |
-| Firewall | Open | Port 8000 reachable from phone (`curl http://34.31.112.77:8000/` returns JSON) |
+| Firewall | Open | Port 8000 reachable from phone (`curl` against the VM (retired; address no longer valid) returned JSON) |
 | Phone env vars | Set | `TB_MCP_URL` and `TB_MCP_KEY` in `$PREFIX/etc/secrets.env` |
 | Vault write-through code | Committed | `writeVaultNote()` in helpers.ts, wired into thoughts.ts, projects.ts, tasks.ts — pushed to fork hash `7f545fd` |
 | systemd unit | Created | `/etc/systemd/system/terrestrial-brain.service`, auto-restarts |
